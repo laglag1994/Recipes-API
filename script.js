@@ -20,20 +20,24 @@ async function fetchMealBySearch(term){
     const searchMeal =await fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata"+ term)
 }
 
-function addMeal(mealData, random=false){
+function addMeal(mealData, random = false){
     const meal= document.createElement('div');
     meal.classList.add('meal');
+
+
     meal.innerHTML=`  
     <div class="meal-head">
         ${random ?`<sapn class="random">وصفة اليوم</sapn>`: ''}
 
-        <img src="${mealData.strMealThumb}" alt="${mealData.strMeal}" height="350" width="350">
+        <img src="${mealData.strMealThumb}" 
+        alt="${mealData.strMeal}" height="350" width="350">
     </div>
 
     <div class="meal-body">
-        <h3>${mealData.strMeal}/h3>
+        <h3>${mealData.strMeal}</h3>
         <button class="like-btn active" >إعجاب</button>
     </div> 
     `
-
+    meals.appendChild(meal);
 }
+

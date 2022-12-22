@@ -52,6 +52,11 @@ header button{
     cursor: pointer;
 }
 
+header button:hover{
+    background-color: #cfb28e;
+
+}
+
 .fav-meals{
     background-color:#e7c69d ;
     height: 195px;
@@ -146,5 +151,6 @@ header button{
 
 .meal-body h3{
     font-size:medium;
-    font-weight: 300;
+    font-weight: bold;
+    color: #993a0d;
 }
