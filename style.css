@@ -146,6 +146,9 @@ header button:hover{
 .meal-body button:active{
     background-color: #e7c69d;
     color: #993a0d;
+    font-size: medium;
+    font-weight: 500;
+
 
 }
 
