@@ -1,17 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipes App</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500&family=League+Spartan:wght@900&family=Noto+Sans+Arabic:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500&family=League+Spartan:wght@900&family=Noto+Sans+Arabic:wght@500&display=swap" rel="stylesheet">
+    
+<link rel="stylesheet" href="path/to/fontawesome.min.css">
+
+        
     <script src="script.js" defer></script>
 </head>
-<body>
 
-    <h1>hello world</h1>
-    
+<body>
+    <div class="meal-container">
+
+        <header>
+            <input type="text">
+            <button id="search">بحث</button>
+        </header>
+
+
+
+        <div class="fav-meals">
+            <h3>المفضلة</h3>
+            <ul>
+                <li>
+                    <img
+                        src="https://www.themealdb.com/images/media/meals/llcbn01574260722.jpg/preview" height="80px" width="80px"><span>صحي</span>
+                </li>
+                <li>
+                    <img src="https://www.themealdb.com/images/media/meals/n7qnkb1630444129.jpg" height="80" width="80"><span>كيتو</span>
+                </li>
+                <li>
+                    <img src="https://www.themealdb.com/images/media/meals/0jv5gx1661040802.jpg" height="80" width="80"><span>خضار</span>
+                </li>
+                <li>
+                    <img src="https://www.themealdb.com/images/media/meals/g046bb1663960946.jpg" height="80" width="80"><span>سوشي</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="meals">
+            
+            <div class="meal">
+                <!-- <sapn class="random">وصفة اليوم</sapn> -->
+
+                <div class="meal-head">
+                    <sapn class="random">وصفة اليوم</sapn>
+
+                    <img src="https://www.themealdb.com/images/media/meals/1529445434.jpg" alt="" height="350" width="350">
+                </div>
+
+                <div class="meal-body">
+                    <h3>وجبات نباتية</h3>
+                    <button class="like-btn active" >إعجاب</button>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
 </body>
+
 </html>

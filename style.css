@@ -3,7 +3,148 @@
 }
 
 body{
-    font-family: 'Epilogue', sans-serif;
+    font-family: 'Noto Sans Arabic', sans-serif;
     margin: 0;
+    display: flex;
+    background-color: #dfdedd;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 
+}
+
+img{
+    max-width: 100%;
+    
+}
+
+.meal-container{
+    background-color: #fff;
+    width: 400px;
+    box-shadow: 0 0 10px 5px #3333331a;
+    overflow: hidden;   
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    padding-top: 20px;
+}
+
+header input{
+    background-color:#dfdedd ;
+    border: none;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    padding: 7px 10px;
+}
+
+
+header button{
+    background-color: #e7c69d;
+    border: none;
+    padding: 0.5px 10px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-family: 'Noto Sans Arabic', sans-serif;
+    cursor: pointer;
+}
+
+.fav-meals{
+    background-color:#e7c69d ;
+    height: 195px;
+}
+
+.fav-meals ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* justify-content: space-evenly; */
+    gap: 1rem;
+    padding-left: 15px;
+
+}
+.fav-meals ul li{
+    list-style: none;
+    text-align: center;
+    line-height: 20px;
+    font-weight: 500;
+    color: #25130c;
+
+}
+
+.fav-meals img{
+    border-radius: 50%;
+    border: 2px #dfdedd solid;
+    box-shadow: 0 0 10px 5px #3333331a;
+}
+
+.fav-meals h3{
+    text-align: center;
+    padding-top: 10px;
+    color: #25130c;
+}
+
+
+
+.meal{
+    border-radius: 3px;
+    box-shadow: 0 0 10px 20px #0000001a;
+    margin: 25px;  
+    overflow: hidden;
+}
+
+.meal-head{
+    position: relative;
+}
+
+
+.meal-head .random{
+    position:absolute ;
+    top: 30px;
+    background-color: #698e29;
+    width: 120px;
+    text-align: center;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    color: #fff;
+}
+
+.meal-head img{
+    border-radius: 5px;
+}
+
+.meal-body{
+    display: flex;
+    border-radius: 5px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px  30px 20px 30px;
+
+}
+
+.meal-body button{
+    background-color: #993a0d;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Noto Sans Arabic', sans-serif;
+    font-size: medium;
+    cursor: pointer;
+    width: 100px;
+    color: #fff;
+}
+
+
+
+.meal-body button:active{
+    background-color: #e7c69d;
+    color: #993a0d;
+
+}
+
+.meal-body h3{
+    font-size:medium;
+    font-weight: 300;
 }
