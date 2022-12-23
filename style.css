@@ -50,10 +50,12 @@ header button{
     border-bottom-right-radius: 5px;
     font-family: 'Noto Sans Arabic', sans-serif;
     cursor: pointer;
+    color: #993a0d;
+    font-weight: 700;
 }
 
 header button:hover{
-    background-color: #cfb28e;
+    background-color: #c0a17b;
 
 }
 

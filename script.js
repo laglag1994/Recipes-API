@@ -77,7 +77,7 @@ function removeMeal(id){
 
 //اخذ الوجبة المحفوظة
 function getStored() {
-    const mealIds = localStorage.getItem('mealIds')
+    const mealIds = JASON.parse(localStorage.getItem('mealIds'))
     return mealIds
 }
 
@@ -88,12 +88,4 @@ function getStored() {
 
 
 
-function setItem() {
-
-
-}
-
-function getItem() {
-
-
-}
+ 
