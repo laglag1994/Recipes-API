@@ -60,13 +60,40 @@ function addMeal(mealData, random = false) {
     meals.appendChild(meal);
 }
 
-//اخذ الوجبة اللي انعمل لها لايك واحفظها في ستور
-    function storeMeals(){
+//اضيف الوجبة للايكات
+function storeMeals(id) {
+    const mealIds = getStored();
 
-    }
+    localStorage.setItem('mealIds',JSON.stringify([...mealIds,id]))
+}
+
+//احذف الوجبة من اللايكات
+function removeMeal(id){
+    const mealIds = getStored();
+    localStorage.setItem('mealIds',JSON.stringify(mealIds.filter (mealId=>mealId !==id)))
+}
+
+
 
 //اخذ الوجبة المحفوظة
-    function getStored(){
+function getStored() {
+    const mealIds = localStorage.getItem('mealIds')
+    return mealIds
+}
 
-    }
 
+
+
+
+
+
+
+function setItem() {
+
+
+}
+
+function getItem() {
+
+
+}
