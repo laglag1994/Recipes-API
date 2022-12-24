@@ -18,7 +18,11 @@ async function fetchRandomMeal() {
 
 // نفس اللي قبل
 async function fetchMealById(id) {
-    const idMeal = await fetch("https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772" + id)
+    const idResp = await fetch("https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772" + id);
+    const idMeal=await idResp.json();
+    const meal=idMeal.meals[0]
+    return meal
+
 }
 
 //نفس اللي قبل
@@ -29,7 +33,7 @@ async function fetchMealBySearch(term) {
 
 // فتكشن تاخذ متغيرين -الداتا للوجبة + الراندوم للوجبة * 
 function addMeal(mealData, random = false) {
-
+    console.log(mealData)
     //Create div HTML element  
     const meal = document.createElement('div');
     //add 'meal' class to meal element 
@@ -53,6 +57,13 @@ function addMeal(mealData, random = false) {
     //مو مهم بس كنت بسوي اكتيف للزر وما زبط
     const btn = meal.querySelector('.meal-body .like-btn');
     addEventListener('click', () => {
+        if(btn.classList.contains('active')){
+            removeMealFromLS(mealData.idMeal)
+            btn.classList.remove('avtive');
+        }else{
+            getMealFromLS(mealData.idMeal)
+            btn.classList.add('active')
+        }
         btn.classList.toggle('avtive');
     });
 
@@ -61,27 +72,38 @@ function addMeal(mealData, random = false) {
 }
 
 //اضيف الوجبة للايكات
-function storeMeals(id) {
-    const mealIds = getStored();
+function addMealToLS(id) {
+    const mealIds = getMealFromLS();
 
     localStorage.setItem('mealIds',JSON.stringify([...mealIds,id]))
 }
 
 //احذف الوجبة من اللايكات
-function removeMeal(id){
-    const mealIds = getStored();
-    localStorage.setItem('mealIds',JSON.stringify(mealIds.filter (mealId=>mealId !==id)))
+function removeMealFromLS(id){
+    const mealIds = getMealFromLS();
+
+    localStorage.setItem('mealIds',JSON.stringify(mealIds.filter ((theId) => theId !==id)))
 }
 
 
 
 //اخذ الوجبة المحفوظة
-function getStored() {
-    const mealIds = JASON.parse(localStorage.getItem('mealIds'))
-    return mealIds
+function getMealFromLS() {
+    const mealIds = JSON.parse(localStorage.getItem('mealIds'))
+    return mealIds === null? [] :mealIds;
 }
 
+async function fetchFavMeal(){
+    const mealIds =getMealFromLS();
+    const mealArr=[];
 
+    for (let i=0; i<mealIds.length; i++){
+        const mealId =mealIds[i];
+        meals= await fetchMealById(mealId)
+        mealArr.push(meals)
+    }
+    console.log(mealArr)
+}
 
 
 
