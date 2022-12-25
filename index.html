@@ -13,6 +13,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500&family=League+Spartan:wght@900&family=Noto+Sans+Arabic:wght@500&display=swap"
         rel="stylesheet">
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
 
     <link rel="stylesheet" href="path/to/fontawesome.min.css">
 
@@ -24,35 +28,24 @@
     <div class="meal-container">
 
         <header>
-            <input type="text">
-            <button id="search">بحث</button>
+            <input type="text" id="search-term">
+            <button id="search"><i class="fas fa-search"></i></button>
         </header>
 
 
 
         <div class="fav-meals">
             <h3>المفضلة</h3>
-            <ul>
-                <li>
-                    <img src="https://www.themealdb.com/images/media/meals/llcbn01574260722.jpg/preview" height="80px"
-                        width="80px"><span>صحي</span>
-                </li>
-                <li>
-                    <img src="https://www.themealdb.com/images/media/meals/n7qnkb1630444129.jpg" height="80"
-                        width="80"><span>كيتو</span>
-                </li>
-                <li>
-                    <img src="https://www.themealdb.com/images/media/meals/0jv5gx1661040802.jpg" height="80"
-                        width="80"><span>خضار</span>
-                </li>
-                <li>
-                    <img src="https://www.themealdb.com/images/media/meals/g046bb1663960946.jpg" height="80"
-                        width="80"><span>لحوم</span>
-                </li>
+            <ul class="'fav-meals" id="fav-meals">
+
             </ul>
         </div>
         <div class="meals" id="meals"></div>
     </div>
+
+
+
+
 </body>
 
 </html>

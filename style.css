@@ -133,22 +133,18 @@ header button:hover{
 }
 
 .meal-body button{
-    background-color: #993a0d;
+    background-color: white;
     border: none;
-    border-radius: 5px;
     font-family: 'Noto Sans Arabic', sans-serif;
-    font-size: medium;
+    font-size: x-large;
     cursor: pointer;
-    width: 100px;
-    color: #fff;
+    color: #868381;
 }
 
 
 
 .meal-body button:active{
-    background-color: #e7c69d;
     color: #993a0d;
-    font-size: medium;
     font-weight: 500;
 
 
@@ -161,7 +157,15 @@ header button:hover{
 
 }
 
-.meal-body{
-    
+.popup-container button {
+    color: #25130c;
+    border: none;
+    background-color: none;
+    font-weight: 700;
+
 }
 
+
+.popup-container button:hover{
+    color: #993a0d;
+}
