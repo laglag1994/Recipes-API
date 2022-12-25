@@ -61,7 +61,10 @@ header button:hover{
 
 .fav-meals{
     background-color:#e7c69d ;
-    height: 195px;
+    height: auto;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+
 }
 
 .fav-meals ul{
@@ -71,37 +74,53 @@ header button:hover{
     /* justify-content: space-evenly; */
     gap: 1rem;
     padding-left: 15px;
+    flex-wrap: wrap;
+
 
 }
 .fav-meals ul li{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+
+.fav-meals span{
     list-style: none;
     text-align: center;
     line-height: 20px;
     font-weight: 500;
     color: #25130c;
-    align-items: center;
-    justify-content: center;
+    width: 70px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
 
 }
 
-.fav-meals ul li button{
+.fav-meals  li .clear{
     position: absolute;
-    background:none;
+    background:transparent;
     border: none;
     cursor: pointer;
     color: #993a0d;
     font-weight: 700;
-    padding-bottom: 5.5rem;
-    padding-left: 3.5rem;
+    top: 0;
+    right: 0;
+    
 
 }
 
-.fav-meals img{
+.fav-meals li img{
     border-radius: 50%;
     border: 2px #dfdedd solid;
     box-shadow: 0 0 10px 5px #3333331a;
+    object-fit: cover;
+    width: 70px;
+    height: 70px;
 }
 
 .fav-meals h3{
