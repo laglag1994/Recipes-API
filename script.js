@@ -1,12 +1,6 @@
-const meals = document.getElementById('meals')
+let meals = document.getElementById('meals')
 const favContainer = document.getElementById('like-meals')
 
-// const mealPopup = document.getElementById("meal-popup");
-// const mealInfoEl = document.getElementById("meal-info");
-// const popupCloseBtn = document.getElementById("close-popup");
-
-const searchTerm = document.getElementById("search-term");
-const searchBtn = document.getElementById("search");
 
 fetchRandomMeal();
 fetchFavMeal();
@@ -28,8 +22,9 @@ async function fetchRandomMeal() {
 
 // نفس اللي قبل
 async function fetchMealById(id) {
-    const idResp = await fetch("https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772" + id);
+    const idResp = await fetch("https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + id);
     const idMeal = await idResp.json();
+    console.log(idMeal)
     const meal = idMeal.meals[0]
     return meal
 
@@ -75,7 +70,7 @@ function addMeal(mealData, random = false) {
 `;
 
     //مو مهم بس كنت بسوي اكتيف للزر وما زبط
-    const btn = meal.querySelector('.meal-body .like-btn');
+    const btn = meal.querySelector('.fav-btn');
     addEventListener('click', () => {
         if (btn.classList.contains('active')) {
             removeMealFromLS(mealData.idMeal)
@@ -89,9 +84,9 @@ function addMeal(mealData, random = false) {
 
 
 
-    meal.addEventListener("click", () => {
-        showMealInfo(mealData);
-    });
+    // meal.addEventListener("click", () => {
+    //     showMealInfo(mealData);
+    // });
 
     //Add an HTML element
     meals.appendChild(meal);
@@ -183,80 +178,3 @@ function addToFav(mealData) {
 
 }
 
-
-// function showMealInfo(mealData) {
-//     // clean it up
-//     mealInfoEl.innerHTML = "";
-
-//     // update the Meal info
-//     const mealEl = document.createElement("div");
-
-//     const ingredients = [];
-
-//     // get ingredients and measures
-//     for (let i = 1; i <= 20; i++) {
-
-
-//         if (mealData["strIngredient" + i]) {
-//             ingredients.push(
-//                 `${mealData["strIngredient" + i]} - ${
-//                     mealData["strMeasure" + i]
-//                 }`
-//             );
-//         } else {
-//             break;
-//         }
-
-//     }
-    
-
-
-//     mealEl.innerHTML = `
-//     <h1>${mealData.strMeal}</h1>
-//     <img
-//         src="${mealData.strMealThumb}"
-//         alt="${mealData.strMeal}"
-//     />
-//     <p>
-//     ${mealData.strInstructions}
-//     </p>
-//     <h3>Ingredients:</h3>
-//     <ul>
-//         ${ingredients
-//             .map(
-//                 (ing) => `
-//         <li>${ing}</li>
-//         `
-//             )
-//             .join("")}
-//     </ul>
-// `;
-
-// mealInfoEl.appendChild(meals);
-
-
-
-// // show the popup
-// mealPopup.classList.remove("hidden");
-// }
-
-
-
-
-// searchBtn.addEventListener("click", async () => {
-//     // clean container
-//     meals.innerHTML = "";
-
-//     const search = searchTerm.value;
-//     const meals = await getMealsBySearch(search);
-
-//     if (meals) {
-//         meals.forEach((meal) => {
-//             addMeal(meal);
-//         });
-//     }
-// });
-
-// popupCloseBtn.addEventListener("click", () => {
-//     mealPopup.classList.add("hidden");
-// });

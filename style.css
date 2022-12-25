@@ -74,11 +74,27 @@ header button:hover{
 
 }
 .fav-meals ul li{
+    display: flex;
+    flex-direction: column;
     list-style: none;
     text-align: center;
     line-height: 20px;
     font-weight: 500;
     color: #25130c;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.fav-meals ul li button{
+    position: absolute;
+    background:none;
+    border: none;
+    cursor: pointer;
+    color: #993a0d;
+    font-weight: 700;
+    padding-bottom: 5.5rem;
+    padding-left: 3.5rem;
 
 }
 
@@ -169,3 +185,5 @@ header button:hover{
 .popup-container button:hover{
     color: #993a0d;
 }
+
+
