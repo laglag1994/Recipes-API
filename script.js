@@ -183,6 +183,8 @@ function addToFav(mealData) {
 
 }
 
+console.log(showMealInfo)
+
 function showMealInfo(mealData) {
     //clean 
     mealInfoEl.innerHTML = "";
