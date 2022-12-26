@@ -86,7 +86,7 @@ function addMeal(mealData, random = false) {
             addMealToLS(mealData.idMeal)
             btn.classList.add('active');
         }
-         fetchFavMeal();
+        fetchFavMeal();
     });
 
 
@@ -137,7 +137,7 @@ function getMealFromLS() {
 
 
 async function fetchFavMeal() {
-     // clean the container//
+    // clean the container//
     favContainer.innerHTML = "";
 
     const mealIds = getMealFromLS();
@@ -145,7 +145,7 @@ async function fetchFavMeal() {
     for (let i = 0; i < mealIds.length; i++) {
 
         const mealId = mealIds[i];
-        meal= await fetchMealById(mealId)
+        meal = await fetchMealById(mealId)
 
         addToFav(meal)
     }
@@ -165,7 +165,7 @@ function addToFav(mealData) {
     `;
 
 
-    
+
     const btn = favMeal.querySelector(".clear");
 
     btn.addEventListener("click", () => {
@@ -183,28 +183,28 @@ function addToFav(mealData) {
 
 }
 
-function showMealInfo(mealData){
+function showMealInfo(mealData) {
     //clean 
-    mealInfoEl.innerHTML="";
+    mealInfoEl.innerHTML = "";
 
     //update info
-    const mealEl =document.createElement('div');
-    const ingredients =[];
+    const mealEl = document.createElement('div');
+    const ingredients = [];
 
     //get ingredients
 
-    for (let i=1; i<=20; i++){
-        if (mealData["strIngredient" +i]){
+    for (let i = 1; i <= 20; i++) {
+        if (mealData["strIngredient" + i]) {
             ingredients.push(
-                `${mealData["strIngredient" +i]} - ${mealData["strIngredient"+i] } ` 
+                `${mealData["strIngredient" + i]} - ${mealData["strIngredient" + i]} `
             );
-        }else{
+        } else {
             break;
         }
-    
+
     }
 
-    mealEl.innerHTML=`
+    mealEl.innerHTML = `
     <h1>${mealData.strMeal}</h1>
     <img
         src="${mealData.strMealThumb}"
@@ -225,22 +225,22 @@ function showMealInfo(mealData){
     </ul>
 `;
 
-mealInfoEl.appendChild(mealEl);
+    mealInfoEl.appendChild(mealEl);
 
-mealPopup.classList.remove("hidden");
+    mealPopup.classList.remove("hidden");
 
 }
 
 
 
-searchBtn.addEventListener('click',async()=>{
+searchBtn.addEventListener('click', async () => {
     //clean container
-    mealsEl.innerHTML='';
-    const search =searchTerm.value;
+    mealsEl.innerHTML = '';
+    const search = searchTerm.value;
     const meals = await getMealsBySearch(search);
 
-    if (meals){
-        meals.forEach((meal)=> {
+    if (meals) {
+        meals.forEach((meal) => {
             addMeal(meal);
         })
     }
