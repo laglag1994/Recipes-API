@@ -57,11 +57,17 @@ function addMeal(mealData, random = false) {
     const meal = document.createElement('div');
     //add 'meal' class to meal element 
     meal.classList.add('meal');
+    // if (1==2){
+    //     console.log("word")
+    // }else{
+    //     console.log('3aneed')
+    // }
+    // 1==2 ? console.log('word') : console('3aneed')
 
 
     meal.innerHTML = `  
     <div class="meal-head">
-        ${random ? `<sapn class="random">وصفة اليوم</sapn>` : ''}
+        ${random ? `<span class="random">وصفة اليوم</span>` : ''}
 
         <img src="${mealData.strMealThumb}" 
         alt="${mealData.strMeal}" height="350" width="350">
@@ -76,9 +82,10 @@ function addMeal(mealData, random = false) {
 `;
 
     //مو مهم بس كنت بسوي اكتيف للزر وما زبط
-    const btn = meal.querySelector(".meal-body .fav-btn");
+    const btn = meal.querySelector(".fav-btn");
 
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation()
         if (btn.classList.contains('active')) {
             removeMealFromLS(mealData.idMeal)
             btn.classList.remove('active');
@@ -168,7 +175,8 @@ function addToFav(mealData) {
 
     const btn = favMeal.querySelector(".clear");
 
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", (e) => {
+            e.stopPropagation()
         removeMealFromLS(mealData.idMeal);
         fetchFavMeal();
 
@@ -251,4 +259,49 @@ searchBtn.addEventListener('click', async () => {
 popupCloseBtn.addEventListener("click", () => {
     mealPopup.classList.add("hidden");
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
